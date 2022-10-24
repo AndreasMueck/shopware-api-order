@@ -5,8 +5,8 @@ import * as Yup from 'yup';
 import { useAuthStore } from '@/stores';
 
 const schema = Yup.object().shape({
-    username: Yup.string().required('Username is required'),
-    password: Yup.string().required('Password is required')
+    username: Yup.string().required('Benutzername eingeben'),
+    password: Yup.string().required('Passwort eingeben')
 });
 
 async function onSubmit(values) {
@@ -18,16 +18,16 @@ async function onSubmit(values) {
 
 <template>
     <div class="card m-3">
-        <h4 class="card-header">Login</h4>
+        <h4 class="card-header">Anmelden mit Shopware-Benutzer</h4>
         <div class="card-body">
             <Form @submit="onSubmit" :validation-schema="schema" v-slot="{ errors, isSubmitting }">
                 <div class="form-group">
-                    <label>Username</label>
+                    <label>Benutzername</label>
                     <Field name="username" type="text" class="form-control" :class="{ 'is-invalid': errors.username }" />
                     <div class="invalid-feedback">{{ errors.username }}</div>
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
+                    <label>Passwort</label>
                     <Field name="password" type="password" class="form-control" :class="{ 'is-invalid': errors.password }" />
                     <div class="invalid-feedback">{{ errors.password }}</div>
                 </div>
@@ -36,7 +36,7 @@ async function onSubmit(values) {
                         <span v-show="isSubmitting" class="spinner-border spinner-border-sm mr-1"></span>
                         Login
                     </button>
-                    <router-link to="register" class="btn btn-link">Register</router-link>
+                    <!--<router-link to="register" class="btn btn-link">Register</router-link>-->
                 </div>
             </Form>
         </div>
