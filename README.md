@@ -1,2 +1,3 @@
 # vue-3-pinia-shopware-api-order
-## In Progress
+## In Progress...
+### Die Idee ist die Bestellungen per Shopware-API auszulesen für eine weitere Verwendung
