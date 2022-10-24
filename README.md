@@ -1,1 +1,1 @@
-# vue-3-pinia-registration-login-example
+# vue-3-pinia-shopware-api-order
