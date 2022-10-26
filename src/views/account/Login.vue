@@ -4,15 +4,18 @@ import * as Yup from 'yup';
 
 import { useAuthStore } from '@/stores';
 
+// Action bei fehlerhafter Eingabe
 const schema = Yup.object().shape({
     username: Yup.string().required('Benutzername eingeben'),
     password: Yup.string().required('Passwort eingeben')
 });
 
-async function onSubmit(values) {
+// Authentifizierung nach Eingabe der Daten
+async function onSubmit(values) { // (values) aus der Eingabe
     const authStore = useAuthStore();
-    const { username, password } = values;
-    await authStore.login(username, password);
+    const { username, password } = values; // values als Parameter aus der Eingabe - auch die Falscheingaben
+    //console.log('Eingabefelder: ' + JSON.stringify(values));
+    await authStore.login(username, password); // Übergabe der Eingaben an Login Methode
 }
 </script>
 
@@ -36,7 +39,7 @@ async function onSubmit(values) {
                         <span v-show="isSubmitting" class="spinner-border spinner-border-sm mr-1"></span>
                         Login
                     </button>
-                    <!--<router-link to="register" class="btn btn-link">Register</router-link>-->
+                    <router-link to="register" class="btn btn-link">Register</router-link>
                 </div>
             </Form>
         </div>

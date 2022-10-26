@@ -26,8 +26,8 @@ function request(method) {
 function authHeader(url) {
     // return auth header with jwt if user is logged in and request is to the api url
     const { user } = useAuthStore();
-    const isLoggedIn = !!user?.token;
-    const isApiUrl = url.startsWith(import.meta.env.VITE_API_URL);
+    const isLoggedIn = Boolean(user?.token); // Some people consider using !! because it’s shorter than writing Boolean(). - re true or false
+    const isApiUrl = url.startsWith(import.meta.env.VITE_API_URL); // The startsWith() method returns true if a string starts with a specified string.
     if (isLoggedIn && isApiUrl) {
         return { Authorization: `Bearer ${user.token}` };
     } else {

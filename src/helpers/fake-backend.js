@@ -2,7 +2,7 @@ export { fakeBackend };
 
 // array in local storage for registered users
 const usersKey = 'vue-3-pinia-registration-login-example-users';
-let users = JSON.parse(localStorage.getItem(usersKey)) || [];
+let users = JSON.parse(localStorage.getItem(usersKey)) || []; //Parse the data with JSON.parse(), and the data becomes a JavaScript object.
 
 function fakeBackend() {
     let realFetch = window.fetch;

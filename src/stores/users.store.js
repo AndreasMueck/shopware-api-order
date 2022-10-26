@@ -5,8 +5,8 @@ import { useAuthStore } from '@/stores';
 
 const baseUrl = `${import.meta.env.VITE_API_URL}/users`;
 
-export const useUsersStore = defineStore({
-    id: 'users',
+export const useUsersStore = defineStore('users',{
+    //id: 'users',
     state: () => ({
         users: {},
         user: {}
