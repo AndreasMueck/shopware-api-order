@@ -15,6 +15,9 @@ export const useAuthStore = defineStore('auth',{ // Option store anstatt Setup S
         user: JSON.parse(localStorage.getItem('user')),
         returnUrl: null
     }),
+    getters: {
+        showState: (state) => state,
+      },
     actions: {
         async login(username, password) {
             try {
